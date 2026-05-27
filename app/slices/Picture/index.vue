@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Content } from "@prismicio/client";
+import SlideIn from "~/components/SlideIn.vue";
 
 defineProps(getSliceComponentProps<Content.PictureSlice>());
 </script>
@@ -14,8 +15,10 @@ defineProps(getSliceComponentProps<Content.PictureSlice>());
       <PrismicImage
         :field="slice.primary.picture"
         class="z-20 w-full row-span-2"
+        loading="lazy"
       />
-      <figcaption
+      <SlideIn
+        as="figcaption"
         class="px-4 pt-4 pb-16 rich-text"
         :class="{
           'xl:self-start':
@@ -24,7 +27,7 @@ defineProps(getSliceComponentProps<Content.PictureSlice>());
         }"
       >
         <PrismicRichText :field="slice.primary.caption" />
-      </figcaption>
+      </SlideIn>
     </figure>
     <figure
       v-if="$prismic.isFilled.image(slice.primary.secondary_picture)"
@@ -32,21 +35,23 @@ defineProps(getSliceComponentProps<Content.PictureSlice>());
       :class="{
         'xl:self-end':
           slice.variation === 'default' || slice.variation === 'bottom',
-        'xl:order-start': slice.variation === 'top',
+        'xl:self-start': slice.variation === 'top',
       }"
     >
       <PrismicImage
         :field="slice.primary.secondary_picture"
         class="z-20 w-full"
+        loading="lazy"
       />
-      <figcaption
+      <SlideIn
+        as="figcaption"
         class="px-4 pt-4 pb-16 rich-text"
         :class="{
           'xl:order-first': slice.variation === 'bottom',
         }"
       >
         <PrismicRichText :field="slice.primary.secondary_caption" />
-      </figcaption>
+      </SlideIn>
     </figure>
   </section>
 </template>

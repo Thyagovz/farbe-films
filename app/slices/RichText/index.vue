@@ -5,11 +5,11 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
 </script>
 
 <template>
-  <section
+  <SlideIn
     class="bounded rich-text flex flex-col justify-center"
     :class="{
       'min-h-[40vh]': slice.variation !== 'fullscreen',
-      'min-h-screen': slice.variation === 'fullscreen',
+      'min-h-screen opacity-0': slice.variation === 'fullscreen',
     }"
   >
     <PrismicRichText :field="slice.primary.title" />
@@ -23,5 +23,5 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
         class="cta outlined"
       />
     </div>
-  </section>
+  </SlideIn>
 </template>
