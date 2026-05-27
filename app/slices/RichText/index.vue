@@ -5,20 +5,23 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
 </script>
 
 <template>
-  <section>
-    <PrismicRichText :field="slice.primary.content" />
+  <section
+    class="bounded rich-text flex flex-col justify-center"
+    :class="{
+      'min-h-[40vh]': slice.variation !== 'fullscreen',
+      'min-h-screen': slice.variation === 'fullscreen',
+    }"
+  >
+    <PrismicRichText :field="slice.primary.title" />
+    <PrismicRichText :field="slice.primary.text" />
+    <div v-if="slice.primary.ctas?.length" class="mt-16 flex -ml-4">
+      <PrismicLink
+        v-for="link in slice.primary.ctas"
+        :key="link.key"
+        :field="link"
+        :class="link.variant?.toLowerCase()"
+        class="cta outlined"
+      />
+    </div>
   </section>
 </template>
-
-<style scoped>
-section {
-  max-width: 600px;
-  margin: 6em auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-section:deep(.codespan) {
-  font-family: monospace;
-}
-</style>

@@ -38,7 +38,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
-  modules: ["@nuxt/eslint", "@nuxtjs/prismic"],
+  modules: ["@nuxt/eslint", "@nuxtjs/prismic", "@nuxt/fonts"],
 
   prismic: {
     endpoint: repositoryName,
