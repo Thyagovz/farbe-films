@@ -1,0 +1,241 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "top",
+		"primary": {
+			"picture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+					"width": 8640,
+					"height": 8640
+				},
+				"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+				"width": 8640,
+				"height": 8640,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "tall",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit eiusmod cillum dolore reprehenderit ipsum ea nisi anim do deserunt do veniam. Dolore nulla cupidatat dolor. Veniam nulla minim velit ea dolore."
+						}
+					}
+				]
+			},
+			"secondary_picture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+					"width": 4752,
+					"height": 3168
+				},
+				"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+				"width": 4752,
+				"height": 3168,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "create",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"secondary_caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ullamco anim esse quis sint nostrud fugiat adipisicing fugiat adipisicing proident tempor sit incididunt do sit. Excepteur qui cupidatat deserunt. Occaecat in sit culpa proident laboris sit."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"picture": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1749968990420-2db68b9683fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxhaXJwbHxlbnwwfHx8fDE3Nzk5MDE1OTB8MA&ixlib=rb-4.1.0&q=85",
+				"alt": "An airplane flies in a blue sky.",
+				"origin": {
+					"id": "Q9FhCGvZ1hg",
+					"url": "https://images.unsplash.com/photo-1749968990420-2db68b9683fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxhaXJwbHxlbnwwfHx8fDE3Nzk5MDE1OTB8MA&ixlib=rb-4.1.0&q=85",
+					"width": 5874,
+					"height": 3671
+				},
+				"width": 5874,
+				"height": 3671,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna irure cupidatat sit. Proident pariatur adipisicing fugiat dolore."
+						}
+					}
+				]
+			},
+			"secondary_picture": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1519666336592-e225a99dcd2f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxhaXJ8ZW58MHx8fHwxNzc5OTAxNTg2fDA&ixlib=rb-4.1.0&q=85",
+				"alt": "aerial photo of airplane wings during daytime",
+				"origin": {
+					"id": "C9dhUVP-o6w",
+					"url": "https://images.unsplash.com/photo-1519666336592-e225a99dcd2f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw2fHxhaXJ8ZW58MHx8fHwxNzc5OTAxNTg2fDA&ixlib=rb-4.1.0&q=85",
+					"width": 4024,
+					"height": 6024
+				},
+				"width": 4024,
+				"height": 6024,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"secondary_caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate commodo cillum adipisicing amet dolor. Elit velit ea et cillum. ",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "bottom",
+		"primary": {
+			"picture": {
+				"__TYPE__": "ImageContent",
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzc5OTAxNTUzfDA&ixlib=rb-4.1.0&q=85",
+				"alt": "sliced orange fruit on blue surface",
+				"origin": {
+					"id": "8ZGgg6rhzxs",
+					"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzc5OTAxNTUzfDA&ixlib=rb-4.1.0&q=85",
+					"width": 4000,
+					"height": 6000
+				},
+				"width": 4000,
+				"height": 6000,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			},
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In ex qui aliqua consequat et. Id enim ad esse quis ea ut mollit officia. Ex commodo veniam dolor cupidatat consectetur duis dolor."
+						}
+					}
+				]
+			},
+			"secondary_picture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+					"width": 3500,
+					"height": 2338
+				},
+				"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+				"width": 3500,
+				"height": 2338,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "here",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"secondary_caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ullamco laborum ut elit excepteur cillum pariatur aute aliquip adipisicing eu cupidatat veniam dolor cillum."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
