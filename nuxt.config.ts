@@ -1,5 +1,4 @@
 import tailwindcss from "@tailwindcss/vite";
-
 import { repositoryName } from "./slicemachine.config.json";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -17,7 +16,7 @@ export default defineNuxtConfig({
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
-          rel: "apple-touch-iconddd",
+          rel: "apple-touch-icon",
           href: "/apple-touch-icon.png",
           sizes: "180x180",
         },
@@ -39,7 +38,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
-  modules: ["@nuxt/eslint", "@nuxtjs/prismic", "@nuxt/fonts"],
+  modules: ["@nuxt/eslint", "@nuxtjs/prismic"],
 
   prismic: {
     endpoint: repositoryName,

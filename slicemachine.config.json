@@ -3,5 +3,6 @@
   "repositoryName": "farbe-course-nuxt",
   "adapter": "@slicemachine/adapter-nuxt",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
-  "starter": "nuxt-starter-prismic-minimal"
+  "starter": "nuxt-starter-prismic-minimal",
+  "localTypePaths": ["./app/prismicio-types.d.ts"]
 }
