@@ -2,12 +2,12 @@
 import { asImageSrc } from "@prismicio/client";
 import { components } from "~/slices";
 
-
 const { client } = usePrismic();
-const { data: page } = await useAsyncData(
-  `[page-uid-home]`,
-  () => client.getByUID("page", "home")
+const { data: page } = await useAsyncData(`[page-uid-home]`, () =>
+  client.getByUID("page", "home")
 );
+
+const { data: stripeProducts } = await useFetch("/api/products");
 
 useSeoMeta({
   title: page.value?.data.meta_title,
@@ -20,6 +20,10 @@ useSeoMeta({
 
 <template>
   <main>
-    <SliceZone :slices="page?.data.slices ?? []" :components="components" />
+    <SliceZone
+      :slices="page?.data.slices ?? []"
+      :components="components"
+      :context="{ stripeProducts }"
+    />
   </main>
 </template>

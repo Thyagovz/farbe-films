@@ -7,8 +7,17 @@ import Div from "~/slices/Product/Div.vue";
 import DescriptionTerm from "~/slices/Product/DescriptionTerm.vue";
 import DescriptionDetails from "~/slices/Product/DescriptionDetails.vue";
 import { SlideIn } from "#components";
+import type { StripeProduct } from "#shared/types/stripe";
+import { formatPrice } from "~/utils/formatPrice";
 
-const props = defineProps(getSliceComponentProps<Content.ProductSlice>());
+const props = defineProps(
+  getSliceComponentProps<
+    Content.ProductSlice,
+    {
+      stripeProducts: Record<string, StripeProduct>;
+    }
+  >()
+);
 
 const product = computed(() => {
   const prismicProduct = props.slice.primary.product;
@@ -19,8 +28,17 @@ const product = computed(() => {
   ) {
     return undefined;
   }
+
+  const stripeProduct =
+    props.context.stripeProducts[prismicProduct.data?.stripe_id];
+
+  if (!stripeProduct) {
+    return undefined;
+  }
+
   return {
     ...prismicProduct,
+    stripeProduct,
   };
 });
 
@@ -31,9 +49,9 @@ function setQuantity(value: number) {
 function onSubmit(event: Event) {
   event.preventDefault();
 
-  window.alert("onSubmit")
+  window.alert("onSubmit");
 
-  setQuantity(1)
+  setQuantity(1);
 }
 </script>
 
@@ -45,7 +63,9 @@ function onSubmit(event: Event) {
   >
     <header :id="product.uid" class="rich-text pt-[25vh]">
       <PrismicRichText :field="product.data?.name" />
-      <p aria-label="Price">TODO / roll</p>
+      <p aria-label="Price">
+        {{ formatPrice(product.stripeProduct.price?.amount) }}
+      </p>
     </header>
     <section class="rich-text">
       <h3 class="sr-only">Description</h3>

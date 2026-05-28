@@ -10,7 +10,7 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
     :class="{
       'min-h-[40vh]': slice.variation !== 'fullscreen',
       'min-h-screen opacity-0': slice.variation === 'fullscreen',
-    }"
+    }"d
   >
     <PrismicRichText :field="slice.primary.title" />
     <PrismicRichText :field="slice.primary.text" />

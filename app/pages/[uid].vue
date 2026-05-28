@@ -8,6 +8,7 @@ const { data: page } = await useAsyncData(
   `[page-uid-${route.params.uid}]`,
   () => client.getByUID("page", route.params.uid as string)
 );
+const { data: stripeProducts } = await useFetch("/api/products");
 
 useSeoMeta({
   title: page.value?.data.meta_title,
@@ -20,6 +21,10 @@ useSeoMeta({
 
 <template>
   <main>
-    <SliceZone :slices="page?.data.slices ?? []" :components="components" />
+    <SliceZone
+      :slices="page?.data.slices ?? []"
+      :components="components"
+      context="{ stripeProducts }"
+    />
   </main>
 </template>
