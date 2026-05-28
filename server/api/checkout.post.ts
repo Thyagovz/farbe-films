@@ -4,7 +4,7 @@ import { stripe } from "../utils/stripe";
 export default defineEventHandler(async (event) => {
   const indexURL = getRequestURL(event).origin;
 
-  const body = await readBody<Record<string, string>>(event);
+  const body = await readBody<Record<string, number>>(event);
 
   const items = Object.entries(body)
     .map(([price, quantity]) => ({

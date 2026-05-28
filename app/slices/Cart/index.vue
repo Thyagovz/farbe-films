@@ -2,20 +2,72 @@
 import type { Content } from "@prismicio/client";
 
 defineProps(getSliceComponentProps<Content.CartSlice>());
+
+const { items, removeItem, totalPrice } = useCart();
 </script>
 
 <template>
-  <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
+  <SlideIn
+    id="cart"
+    as="form"
+    class="bounded rich-text min-h-screen flex flex-col"
+    method="POST"
+    action="/api/checkout"
   >
-    Placeholder component for cart (variation: {{ slice.variation }}) slices.
-
-    <br />
-    <strong>You can edit this slice directly in your code editor.</strong>
-    <!--
-	💡 Use your own AI agent with the Prismic CLI
-	📚 Docs: https://prismic.io/docs/ai#create-slices
--->
-  </section>
+    <PrismicRichText :field="slice.primary.title" />
+    <ClientOnly>
+      <template v-if="Object.keys(items).length">
+        <PrismicRichText :field="slice.primary.text" />
+        <ul class="!mt-16 max-w-[40ch]">
+          <li
+            v-for="item in items"
+            :key="item.product.id"
+            class="flex items-center !mt-0"
+          >
+            <span class="flex-1">
+              {{ item.name }}
+            </span>
+            <span
+              :aria-label="`Quantity of ${item.name}`"
+              class="flex-1 text-right"
+            >
+              {{ item.quantity }}
+            </span>
+            <span
+              :aria-label="`Price for ${item.quantity} ${item.name}`"
+              class="flex-1 text-right"
+            >
+              {{
+                formatPrice(
+                  (item.product.price?.amount ?? 0) * (item.quantity ?? 0)
+                )
+              }}
+            </span>
+            <button
+              type="button"
+              class="cta w-12.5 -mr-4"
+              title="Remove from cart"
+              @click="removeItem(item.product.id)"
+            >
+              &times;
+            </button>
+            <input
+              v-if="item.product.price?.id"
+              type="hidden"
+              :name="item.product.price.id"
+              :value="item.quantity"
+            />
+          </li>
+        </ul>
+        <hr class="max-w-[40ch]" />
+        <p aria-label="Total price" class="text-right pr-8.5">
+          {{ formatPrice(totalPrice) }}
+        </p>
+        <button type="submit" class="mt-16 cta primary max-w-[40ch] w-full">
+          Checkout
+        </button>
+      </template>
+      <PrismicRichText v-else :field="slice.primary.empty_text" />
+    </ClientOnly>
+  </SlideIn>
 </template>
