@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { Content } from "@prismicio/client";
-import { isFilled } from "@prismicio/client";
+import { asText, type Content, isFilled } from "@prismicio/client";
 import DescriptionList from "~/slices/Product/DescriptionList.vue";
 import PassThrough from "~/slices/Product/PassThrough.vue";
 import Div from "~/slices/Product/Div.vue";
@@ -42,12 +41,27 @@ const product = computed(() => {
   };
 });
 
+const { items, upsertItem } = useCart();
+
 const quantity = ref(1);
 function setQuantity(value: number) {
   quantity.value = Math.max(1, value);
 }
 function onSubmit(event: Event) {
   event.preventDefault();
+
+  if (!product.value) {
+    return;
+  }
+
+  const maybeCartQuantity =
+    items.value[product.value.stripeProduct.id]?.quantity ?? 0;
+
+  upsertItem({
+    product: product.value.stripeProduct,
+    quantity: maybeCartQuantity + quantity.value,
+    name: asText(product.value.data?.name) ?? "",
+  });
 
   window.alert("onSubmit");
 
@@ -99,6 +113,16 @@ function onSubmit(event: Event) {
       </div>
       <div class="flex-1">
         <button class="w-full cta primary" type="submit">Add to cart</button>
+        <ClientOnly>
+          <p
+            class="text-center"
+            :class="{ invisible: !items[product.stripeProduct?.id]?.quantity }"
+          >
+            <NuxtLink to="/#cart" d class="cta muted">
+              {{ items[product.stripeProduct?.id]?.quantity }} in cart
+            </NuxtLink>
+          </p></ClientOnly
+        >
       </div>
     </form>
   </SlideIn>

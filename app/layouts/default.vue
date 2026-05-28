@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { asImageSrc } from "@prismicio/client";
+import { useCart } from "~/composables/useCart";
 
+const route = useRoute();
 const { client } = usePrismic();
 const { data: settings } = await useAsyncData("settings", () =>
   client.getSingle("settings")
@@ -12,6 +14,13 @@ useSeoMeta({
   description: () => settings.value?.data.meta_description,
   ogDescription: () => settings.value?.data.meta_description,
   ogImage: () => asImageSrc(settings.value?.data.meta_image) ?? "",
+});
+
+onMounted(() => {
+  if (route.query.order === "completed") {
+    useCart().clear();
+    useRouter().replace({ path: route.path });
+  }
 });
 </script>
 
