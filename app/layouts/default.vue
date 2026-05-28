@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import { asImageSrc } from "@prismicio/client";
-import { useCart } from "~/composables/useCart";
 import TScene from "~/components/TScene.vue";
-
+import { asImageSrc } from "@prismicio/client";
 
 const route = useRoute();
 const { client } = usePrismic();
@@ -11,11 +9,11 @@ const { data: settings } = await useAsyncData("settings", () =>
 );
 
 useSeoMeta({
-  title: () => settings.value?.data.site_title ?? "Farbe Films",
-  ogTitle: () => settings.value?.data.site_title ?? "Farbe Films",
-  description: () => settings.value?.data.meta_description,
-  ogDescription: () => settings.value?.data.meta_description,
-  ogImage: () => asImageSrc(settings.value?.data.meta_image) ?? "",
+  title: settings.value?.data.site_title,
+  ogTitle: settings.value?.data.site_title,
+  description: settings.value?.data.meta_description,
+  ogDescription: settings.value?.data.meta_description,
+  ogImage: () => asImageSrc(settings.value?.data.meta_image),
 });
 
 onMounted(() => {
@@ -31,7 +29,7 @@ onMounted(() => {
     <AppHeader :settings="settings" class="fixed top-0 left-0 right-0 z-10" />
     <slot />
     <AppFooter :settings="settings" />
-    <TCanvas class="fixed top-0 left-0 right-0 h-lvh ">
+    <TCanvas class="fixed top-0 left-0 right-0 h-lvh -z-1">
       <TScene />
     </TCanvas>
   </div>

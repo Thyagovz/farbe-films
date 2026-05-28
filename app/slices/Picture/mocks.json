@@ -1,86 +1,6 @@
 [
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "top",
-		"primary": {
-			"picture": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-					"width": 8640,
-					"height": 8640
-				},
-				"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
-				"width": 8640,
-				"height": 8640,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"alt": "tall",
-				"credits": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"caption": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Velit eiusmod cillum dolore reprehenderit ipsum ea nisi anim do deserunt do veniam. Dolore nulla cupidatat dolor. Veniam nulla minim velit ea dolore."
-						}
-					}
-				]
-			},
-			"secondary_picture": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-					"width": 4752,
-					"height": 3168
-				},
-				"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
-				"width": 4752,
-				"height": 3168,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"alt": "create",
-				"credits": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"secondary_caption": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ullamco anim esse quis sint nostrud fugiat adipisicing fugiat adipisicing proident tempor sit incididunt do sit. Excepteur qui cupidatat deserunt. Occaecat in sit culpa proident laboris sit."
-						}
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
 			"picture": {
@@ -154,16 +74,111 @@
 						"direction": "ltr"
 					}
 				]
+			},
+			"product": {
+				"key": "b3406d18-6f6b-426a-8052-8d46425683ea",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": []
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
+		"variation": "top",
+		"primary": {
+			"picture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+					"width": 8640,
+					"height": 8640
+				},
+				"url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",
+				"width": 8640,
+				"height": 8640,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "tall",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit eiusmod cillum dolore reprehenderit ipsum ea nisi anim do deserunt do veniam. Dolore nulla cupidatat dolor. Veniam nulla minim velit ea dolore."
+						}
+					}
+				]
+			},
+			"secondary_picture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+					"width": 4752,
+					"height": 3168
+				},
+				"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+				"width": 4752,
+				"height": 3168,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "create",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"secondary_caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ullamco anim esse quis sint nostrud fugiat adipisicing fugiat adipisicing proident tempor sit incididunt do sit. Excepteur qui cupidatat deserunt. Occaecat in sit culpa proident laboris sit."
+						}
+					}
+				]
+			},
+			"product": {
+				"key": "d801264b-0bcf-4997-8d91-9a70042f302a",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
 		"variation": "bottom",
 		"primary": {
 			"picture": {
-				"__TYPE__": "ImageContent",
 				"provider": "imgix",
 				"url": "https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMHx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzc5OTAxNTUzfDA&ixlib=rb-4.1.0&q=85",
 				"alt": "sliced orange fruit on blue surface",
@@ -183,6 +198,8 @@
 						"y": 0
 					}
 				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"caption": {
@@ -229,6 +246,14 @@
 						}
 					}
 				]
+			},
+			"product": {
+				"__TYPE__": "LinkContent",
+				"key": "e8654691-c8fc-4609-86e0-60bf66e37e06",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": [

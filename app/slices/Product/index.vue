@@ -72,6 +72,13 @@ function onSubmit(event: Event) {
 <template>
   <SlideIn
     v-if="product"
+    v-bind="
+      getSceneAttributes({
+        position: 'center',
+        model: product.uid,
+        rotate: true,
+      })
+    "
     as="article"
     class="bounded rich-text min-h-[150vh] flex flex-col justify-center"
   >

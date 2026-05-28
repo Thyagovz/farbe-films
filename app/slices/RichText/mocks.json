@@ -45,6 +45,14 @@
 						}
 					}
 				]
+			},
+			"product": {
+				"key": "e2af35ad-c9c9-4801-8721-0c6381677de4",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": [
@@ -109,6 +117,14 @@
 						}
 					}
 				]
+			},
+			"product": {
+				"__TYPE__": "LinkContent",
+				"key": "867a87c7-d191-4303-8b5c-35fd83e81da3",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": [

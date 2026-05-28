@@ -6,11 +6,19 @@ defineProps(getSliceComponentProps<Content.RichTextSlice>());
 
 <template>
   <SlideIn
+    v-bind="
+      getSceneAttributes({
+        position: 'center',
+        model: $prismic.isFilled.contentRelationship(slice.primary.product)
+          ? slice.primary.product.uid
+          : undefined,
+      })
+    "
     class="bounded rich-text flex flex-col justify-center"
     :class="{
       'min-h-[40vh]': slice.variation !== 'fullscreen',
       'min-h-screen opacity-0': slice.variation === 'fullscreen',
-    }"d
+    }"
   >
     <PrismicRichText :field="slice.primary.title" />
     <PrismicRichText :field="slice.primary.text" />
