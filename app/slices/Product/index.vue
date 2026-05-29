@@ -63,8 +63,6 @@ function onSubmit(event: Event) {
     name: asText(product.value.data?.name) ?? "",
   });
 
-  window.alert("onSubmit");
-
   setQuantity(1);
 }
 </script>

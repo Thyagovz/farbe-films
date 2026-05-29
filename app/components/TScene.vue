@@ -197,7 +197,7 @@ useGSAP(
     :shadow-camera-right="16"
     :shadow-camera-top="16"
     :shadow-camera-bottom="-16"
-    :color="0xffffff"
+    color="#ffffff"
   />
 
   <SoftShadows :size="50" :samples="10" />

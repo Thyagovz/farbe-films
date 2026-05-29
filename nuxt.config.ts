@@ -36,6 +36,7 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    assetsInclude: ["**/*.hdr"],
   },
 
   modules: ["@nuxt/eslint", "@nuxtjs/prismic", "@nuxt/fonts", "@tresjs/nuxt"],

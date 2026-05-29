@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import { ACESFilmicToneMapping, SRGBColorSpace } from "three";
+import { onMounted, ref } from "vue";
+import { ACESFilmicToneMapping, PCFShadowMap, SRGBColorSpace } from "three";
+import { TresCanvas } from "@tresjs/core";
 
 const mounted = ref(false);
 
@@ -14,7 +16,9 @@ onMounted(() => {
     :class="{ 'opacity-0': !mounted }"
   >
     <TresCanvas
-      :shadows="true"
+      v-if="mounted"
+      shadows
+      :shadow-map-type="PCFShadowMap"
       :output-color-space="SRGBColorSpace"
       :tone-mapping="ACESFilmicToneMapping"
       :tone-mapping-exposure="3"
