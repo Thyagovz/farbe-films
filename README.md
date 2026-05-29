@@ -1,123 +1,59 @@
-# Prismic + Nuxt Minimal Starter
+# Farbe Films
 
-Want to quickly get started building your own project with [Prismic][prismic] and [Nuxt][nuxt]? This project includes basic configurations and nothing else. The project includes one Rich Text Slice, a homepage, and a dynamic page.
+Uma experiência interativa de e-commerce voltada para entusiastas de fotografia analógica, focada em performance, fidelidade visual e interações modernas no navegador.
 
-- **Demo**: [Open live demo][live-demo]
-- **Learn more about Prismic and Nuxt**: [Prismic Nuxt Documentation][prismic-docs]
+Este projeto explora a interseção entre o desenvolvimento frontend tradicional e o *creative development*, utilizando renderização 3D em tempo real e animações complexas baseadas em scroll para criar uma jornada de usuário imersiva.
 
-&nbsp;
+## Stack Tecnológica
 
-![Starter screenshot](https://user-images.githubusercontent.com/31219208/228820114-98993841-0b14-40cf-9f39-1b81effe752f.png)
+O projeto foi construído com ferramentas de última geração para garantir escalabilidade, performance e uma experiência de desenvolvimento robusta.
 
-&nbsp;
+*   **Nuxt 4 & Vue.js**: Utilizado como framework base pela sua excelente experiência de desenvolvimento (DX), renderização híbrida e sistema de módulos eficiente.
+*   **TresJS**: Integração declarativa do Three.js com Vue. Permite gerenciar a cena 3D através de componentes, facilitando a reatividade entre a UI e o mundo 3D.
+*   **Three.js**: O motor de renderização 3D por trás das cenas, responsável pelo processamento de geometrias, materiais PBR (Physically Based Rendering) e iluminação.
+*   **GSAP (GreenSock Animation Platform)**: Responsável por todas as orquestrações de movimento, incluindo animações de entrada e o controle refinado das transformações 3D atreladas ao scroll.
+*   **Prismic CMS**: Headless CMS utilizado para gestão de conteúdo dinâmico e fatias de design (*Slices*), permitindo flexibilidade editorial sem comprometer a estrutura do código.
+*   **Tailwind CSS**: Framework utilitário para estilização rápida e consistente da interface 2D.
+*   **Stripe SDK**: Integração de pagamentos para uma experiência de checkout segura e fluida.
 
-## 🚀 Quick Start
+## Engenharia e Performance
 
-To start a new project using this starter, run the following commands in your terminal:
+O desenvolvimento foi guiado por decisões técnicas que visam a fluidez da experiência, mesmo em cenas com alta densidade visual:
 
-```sh
-npx degit prismicio-community/nuxt-starter-prismic-minimal your-project-name
-cd your-project-name
-npx @slicemachine/init@latest
-```
+*   **Renderização 3D Interativa**: Modelos de produtos (canister e embalagem) são renderizados em tempo real, utilizando materiais com texturas de alta definição e sombras suaves (*Soft Shadows*) para realismo.
+*   **Scroll-Driven Animations**: O GSAP ScrollTrigger é utilizado para sincronizar a posição e rotação dos elementos 3D com a navegação do usuário, criando uma narrativa visual contínua.
+*   **Texturas Dinâmicas e Vídeo**: Uso de mapas de textura otimizados (color, metallic, roughness) e implementação de vídeo como textura em elementos específicos para adicionar dinamismo à cena.
+*   **Gerenciamento de Estado**: Fluxo de carrinho e estado da cena gerenciados via composables reativos do Vue, garantindo sincronia perfeita entre as interações 3D e a interface de usuário.
+*   **Otimização de Assets**: Uso de modelos GLTF com compressão Draco e texturas otimizadas para carregamento progressivo e baixo impacto de memória.
 
-The commands will do the following:
+## Funcionalidades Chave
 
-1. Start a new Nuxt project using this starter.
-2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
-3. Create a new Prismic content repository with sample content.
+*   Visualização 3D de produtos em 360 graus.
+*   Navegação fluida com transições de estado baseadas em scroll.
+*   Sistema de carrinho de compras integrado com persistência local.
+*   Design responsivo adaptando a escala e complexidade da cena 3D para dispositivos móveis.
+*   Integração direta com CMS para atualização de metadados e produtos.
 
-When you're ready to start your project, run the following command:
+## Configuração e Instalação
 
-```sh
-npm run dev
-```
+Certifique-se de ter o Node.js (v18+) e o npm/pnpm instalados.
 
-## How to use your project
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/farbe-films.git
+   ```
 
-To edit the content of this project, go to [prismic.io/dashboard](https://prismic.io/dashboard), click on the repository for this website, and start editing.
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-### Create a page
+3. Inicie o ambiente de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-To create a page, click on the green pencil icon, then select **Page**.
+---
 
-Pages are made of Slices. You can add and rearrange Slices to your pages.
-
-Your new page will be accessible by its URL, but it won't appear on the website automatically. To let users discover it, add it to the navigation.
-
-### Preview documents
-
-If you launched this starter when you created a new repository in the Prismic Dashboard, then your repository is preconfigured with previews in development on localhost:3000.
-
-To add a production preview, option your repository and go to _Settings > Previews_. Under _Create a New Preview_, fill in the three fields:
-
-- a name (like **Production**)
-- the domain where your app is running (like <https://www.yoursite.com>)
-- `/api/preview` for the Preview Route
-
-Now, go to a draft document and click the eye icon in the top-right corner.
-
-To learn more about how to configure previews, read [Preview Drafts in Nuxt](https://prismic.io/docs/nuxt#preview-draft-content) in the Prismic documentation.
-
-### Customize this website
-
-This website is preconfigured with Prismic. Functionality is provided by the `@nuxtjs/prismic` package, which makes Prismic utilities available throughout the app. Take a look at the code to see how it's used.
-
-### Edit the code
-
-There are two steps to rendering content from Prismic in your Nuxt project:
-
-1. Fetch content from the Prismic API
-2. Template the content
-
-Here are some of the files in your project that you can edit:
-
-- `nuxt.config.js` - The `prismic` property includes configurations for `@nuxtjs/prismic`.
-- `pages/index.vue` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
-- `pages/[uid].vue` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `slices/RichText/index.vue` - Each Slice has an `index.vue` file that renders the Slice component. Edit this file to customize your Slices.
-
-These are important files that you should leave as-is:
-
-- `pages/slice-simulator.vue` - Do not edit or delete this file. This file simulates your Slice components in development.
-- `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's `index.vue` file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
-
-Learn more about how to edit your components with [Fetch Data in Nuxt](https://prismic.io/docs/nuxt#fetch-content) and [Template Content in Nuxt](https://prismic.io/docs/nuxt-template-content).
-
-### Deploy to the web
-
-To put your project online, see [Deploy your Nuxt App](https://prismic.io/docs/nuxt#deploy).
-
-### Edit content models with Slice Machine
-
-This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Nuxt](https://prismic.io/docs/content-modeling).
-
-If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Nuxt](https://prismic.io/docs/nuxt#define-routes).
-
-## Documentation
-
-For the official Prismic documentation, see [Prismic's guide for Nuxt](prismic-docs) or the [technical references for the installed Prismic packages](https://prismic.io/docs/apis).
-
-## License
-
-```
-Copyright 2013-2026 Prismic <contact@prismic.io> (https://prismic.io)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
-
-[prismic]: https://prismic.io
-[prismic-docs]: https://prismic.io/docs/nuxt
-[prismic-sign-up]: https://prismic.io/dashboard/signup
-[nuxt]: https://nuxt.com
-[live-demo]: https://nuxt-starter-prismic-minimal.vercel.app
+### Observações
+Este é um projeto com foco em demonstração técnica de capacidades frontend e creative coding. Desenvolvido para ser visualmente limpo e tecnicamente denso.
